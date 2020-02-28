@@ -13,14 +13,6 @@ public class SecretExit extends Exit {
 		this.hidden = true; // Secret exit is initially hidden to user.
 	}
 	
-	/**
-	 * Ask if exit is hidden.
-	 * Secret exits should return true at first.
-	 */
-	/*boolean isSecret() {
-		return this.hidden;
-	}*/
-
 	@Override
 	/**
 	 * Allow user to search for secret exits.
