@@ -16,6 +16,14 @@ public class Exit {
 	 * How do we identify the Place that this is going.
 	 */
 	private String target;
+	/**
+	 * Whether or not the exit is hidden to user.
+	 */
+	public boolean hidden;
+	/**
+	 * Whether or not the Place is locked.
+	 */
+	public boolean locked;
 	
 	/**
 	 * Create a new Exit.
@@ -25,6 +33,8 @@ public class Exit {
 	public Exit(String target, String description) {
 		this.description = description;
 		this.target = target;
+		this.hidden = false; // Normal exit is visible.
+		this.locked = false; // Normal exit is unlocked.
 	}
 	
 	/**
@@ -75,5 +85,27 @@ public class Exit {
 			return this.target.equals(rhs.target) && this.description.equals(rhs.description); 
 		}
 		return false;
+	}
+	
+	/**
+	 * Ask if the exit is secret.
+	 * @return hidden value.
+	 */
+	boolean isSecret() {
+		return this.hidden;
+	}
+	
+	/**
+	 * Allow user to search for secret exits; do not apply to normal exits.
+	 */
+	void search() {
+		
+	}
+	
+	/**
+	 * Allow user to unlock locked exits; do not apply to normal exits.
+	 */
+	public void unlock() {
+
 	}
 }
